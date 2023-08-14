@@ -1,0 +1,425 @@
+.container-all{
+  width: 100%;  
+  max-width: 87rem;
+}
+/*Portada*/
+.block-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-top: 80px;
+    background-image: url( http://drive.google.com/uc?export=view&id=1Nde3x78n6Qj0H88uxDaB3ZLgBdfYBoCi);/*imagen de fondo*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.block-container:before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.76);
+    position: absolute;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+}
+
+.container-slogan{
+    max-width: 800px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.container-slogan h1{
+    font-size: 60px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 10cm;
+}
+
+.container-slogan p{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    box-shadow: #000000;
+}
+
+/*contenedor de tarjetas */
+.cnt-filtros{
+    height: 500px;
+}
+
+.filtros-vida{
+    display: flex;
+    padding: 40px 0;
+    flex-direction: column;
+justify-content: space-evenly;
+}
+.info{
+    font-size: 2rem;
+    color: rgba(66, 219, 20, 0.836);
+    text-shadow: rgba(255, 255, 255, 0.322) 0.5px 0.5px 0.5px;
+}
+/** tarjetas **/
+* {margin:0; padding:0; box-sizing:border-box;}
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  background-color: #101010;
+  color: white;
+  font-size: min(18px, max(5vw, 13px));
+}
+.conteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+	padding: 2rem 0 3rem 0;
+}
+.tarjetas {
+	display: flex;
+    flex-wrap: wrap;
+	justify-content: center;
+}
+.tarjeta {
+	width: 220px;
+	margin: 1rem;
+
+	perspective: 1000px;
+	transform-style: preserve-3d;
+}
+
+.tarjeta .frontal,
+.tarjeta .tracero {
+	height: auto;
+	min-height: 290px;
+
+	background-size: cover;
+	background-position: center;
+
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
+
+	color: #fff;
+	font-size: 1.5rem;
+	text-align: center;
+
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+	transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.tarjeta .frontal {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+  );
+  
+  background-color: #66D7D1;
+  /* Posicion por defecto */
+  transform: rotateY(0deg);
+}
+
+.frontal:before,
+.tracero::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+}
+.tarjeta #celiacos { 
+	background-image: url(http://drive.google.com/uc?export=view&id=1By8VBq4eu02lstj3c6z9Pw1rZXj8gCFJ);
+}
+.tarjeta #organicos {
+	background-image: url(http://drive.google.com/uc?export=view&id=15H7FVjx5IjV1S8Q4L2gthqFKcS4Ijfj7);	
+}
+.tarjeta #veganos{
+	background-image: url(http://drive.google.com/uc?export=view&id=1SFGIrpagEh_EZiJJOIYFENiLvo3EIjfX);
+}
+.tarjeta #vegetarianos {
+	background-image: url(http://drive.google.com/uc?export=view&id=1cx0m1uuOpOQ44Mnpdz4PI_4qBiAySuXW);
+}
+.tarjeta .tracero {
+	width: 100%;
+	background-image:linear-gradient(rgb(115, 255, 0), rgb(2, 77, 1));
+
+	top: 0;
+	left: 0;
+	position: absolute;
+  /* Posicion por defecto */
+	transform: rotateY(180deg);
+}
+/* Velocidad de transicion */
+.tarjeta:hover .frontal,
+.tarjeta:hover .tracero {transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);}
+
+/* Girar imagen */
+.tarjeta:hover .frontal {transform: rotateY(-180deg);}
+.tarjeta:hover .tracero {transform: rotateY(0deg);}
+
+.tarjeta #cont-3 {
+    display: grid;
+
+	width: 100%;
+	position: absolute;
+	
+	padding: 1px    ;
+	box-sizing: border-box;
+    
+	top: 50%;
+	left: 0;
+	perspective: inherit;
+  /* Posicion de texto central */
+	transform: translateY(-50%) translateZ(60px) scale(0.94);
+}
+.tarjeta .contenido {
+	width: 100%;
+	position: absolute;
+	
+	padding: 2rem;
+	box-sizing: border-box;
+	
+	top: 50%;
+	left: 0;
+	perspective: inherit;
+  /* Posicion de texto central */
+	transform: translateY(-50%) translateZ(60px) scale(0.94);
+}
+.frontal .contenido p {
+	font-size: 2rem;
+	position: relative;
+	margin-bottom: .5rem;
+}
+.frontal .contenido hr {
+	width: 75%;
+	height: 1px;
+	
+	background: #C6D4DF;
+	
+	margin: 0 auto;
+	margin-bottom: 1.5rem;
+}
+.frontal .contenido span {
+    width: 90%;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.frontal .cont-3 span {
+    width: 80%;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/** button **/
+.frame {
+    width: 90%;
+    margin: 0 40px auto;
+    text-align: center;
+  }
+  button {
+    margin: 20px;
+    padding: 5px;
+    background-color: #000000;
+  }
+  .custom-btn {
+    width: 2rem;
+    height: 1rem;
+    color: #fff;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(250, 235, 215, 0.767), 7px 7px 20px 0px rgb(0, 0, 0),   4px 4px 20px 0px rgba(4, 163, 1, 0.192),   2px 2px 3px 0px rgba(7, 212, 0, 0.233);
+    outline: none;
+  }
+  
+  /* stilo 3 */
+  .btn-3 {
+    background: rgb(7, 212, 0);
+    background: linear-gradient(0deg, rgba(7, 212, 0, 0.925) 0%, rgba(5, 163, 1,1) 100%);
+    width: 30%;
+    height: 20%;
+    line-height: 64px;
+    padding: 0;
+    border: none;
+  }
+  .btn-3 span {
+    font-size: 1.5rem;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /** hover button **/
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgb(7, 212, 0);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 3px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 3px;
+  }
+  .btn-3:hover{
+     background: white;
+    box-shadow: none;
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  
+  /* hover span */
+  .btn-3 span:hover{
+     color: rgb(7, 212, 0);
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: rgb(5, 163, 1,1);
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+  
+  /* arriba */
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  
+  /* abajo */
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  
+  /* arriba */
+  .btn-3 span:hover:before {
+    height: 100%;
+  }
+  
+  /* abajo */
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*sistema de filtrado*/
+
+[value="TODOS"]:checked ~ .posts .post[data-category]{
+    display: block;
+}
+
+[value="HTML"]:checked ~ .posts .post:not([data-category~="HTML"]),
+[value="CSS"]:checked ~ .posts .post:not([data-category~="CSS"]),
+[value="JS"]:checked ~ .posts .post:not([data-category~="JS"]),
+[value="PHP"]:checked ~ .posts .post:not([data-category~="PHP"]),
+[value="NODEJS"]:checked ~ .posts .post:not([data-category~="NODEJS"]),
+[value="VUE"]:checked ~ .posts .post:not([data-category~="VUE"]){
+    display: none;
+}
+
+[value="TODOS"]:checked ~ .container-category [for="TODOS"],
+[value="HTML"]:checked ~ .container-category [for="HTML"],
+[value="CSS"]:checked ~ .container-category [for="CSS"],
+[value="JS"]:checked ~ .container-category [for="JS"],
+[value="PHP"]:checked ~ .container-category [for="PHP"],
+[value="NODEJS"]:checked ~ .container-category [for="NODEJS"],
+[value="VUE"]:checked ~ .container-category [for="VUE"]{
+    background: #07d400;
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px){
+    .posts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px){
+    .posts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 580px){
+    .posts{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
